@@ -11,10 +11,10 @@ def send_to_influx(data, project_name):
     """
     Envía las métricas a InfluxDB si las credenciales existen.
     """
-    url = os.getenv("INFLUXDB_URL", "https://us-east-1-1.aws.cloud2.influxdata.com")
-    token = os.getenv("INFLUXDB_TOKEN", "mzDnVmtj8dLOuE1Oo9CWaYWwBCJ0p6MU9ilTtlArl0heBCOk1_wqPEQk17OBZfksv44esWLmZYer-LBv7j8CRQ==")
-    org = os.getenv("INFLUXDB_ORG", "Dev Team")
-    bucket = os.getenv("INFLUXDB_BUCKET", "greenit")
+    url = os.getenv("INFLUXDB_URL")
+    token = os.getenv("INFLUXDB_TOKEN")
+    org = os.getenv("INFLUXDB_ORG")
+    bucket = os.getenv("INFLUXDB_BUCKET")
 
     # Datos de contexto Git (inyectados por GitHub Actions)
     commit_sha = os.getenv("GITHUB_SHA", "local-run")
